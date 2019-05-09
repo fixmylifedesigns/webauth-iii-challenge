@@ -5,7 +5,12 @@ const Users = require("./users-model");
 router.get("/", restricted, (req, res) => {
   Users.find()
     .then(users => {
-      res.json({ users, decodedToken: req.decodedToken });
+      res.json(
+        // { 
+          users 
+        //, decodedToken: req.decodedToken 
+      // }
+      );
     })
     .catch(err => res.send(err));
 });
